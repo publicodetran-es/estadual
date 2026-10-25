@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milano Cucina — Protótipo de Referência</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f5f0;
+      color: #292824;
+    }
+
+    .aviso {
+      padding: 12px;
+      text-align: center;
+      background: #fff0d0;
+      color: #704c17;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    header {
+      background: white;
+      text-align: center;
+      padding: 25px 16px;
+      border-bottom: 1px solid #e6e0d6;
+    }
+
+    .logo {
+      font: 30px Georgia, serif;
+      letter-spacing: 5px;
+    }
+
+    .sublogo {
+      margin-top: 8px;
+      color: #a67b45;
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      padding: 16px;
+      background: white;
+    }
+
+    nav a {
+      color: #292824;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #e6ded1;
+      min-height: 330px;
+    }
+
+    .banner-texto {
+      padding: 45px;
+      align-self: center;
+    }
+
+    .banner h1 {
+      font: 42px Georgia, serif;
+      line-height: 1.1;
+    }
+
+    .banner p {
+      line-height: 1.7;
+      color: #625b51;
+    }
+
+    .banner-visual {
+      background: linear-gradient(135deg, #c9bba7, #827361);
+      display: grid;
+      place-items: center;
+      font: 26px Georgia, serif;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .botao {
+      display: inline-block;
+      background: #252420;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .aviso-interno {
+      margin: 25px 0;
+      padding: 15px;
+      border: 1px dashed #c5a36d;
+      background: #fffaf0;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font: 32px Georgia, serif;
+    }
+
+    .categorias {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .categoria {
+      background: white;
+      border: 1px solid #e6e0d6;
+      padding: 22px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #292824;
+    }
+
+    .categoria span {
+      display: block;
+      color: #a67b45;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .produto {
+      background: white;
+      border: 1px solid #e6e0d6;
+      padding-bottom: 16px;
+    }
+
+    .produto-imagem {
+      height: 170px;
+      background: linear-gradient(135deg, #f0ede6, #dcd5c9);
+      display: grid;
+      place-items: center;
+      font-size: 60px;
+      color: #888276;
+    }
+
+    .produto h3,
+    .produto p {
+      margin: 12px;
+    }
+
+    .produto h3 {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .produto p {
+      color: #a67b45;
+      font-size: 12px;
+    }
+
+    .produto button {
+      margin: 0 12px;
+      width: calc(100% - 24px);
+      padding: 11px;
+      background: white;
+      border: 1px solid #292824;
+      cursor: pointer;
+    }
+
+    .campanha {
+      margin: 40px 0;
+      padding: 35px;
+      background: #292824;
+      color: white;
+    }
+
+    footer {
+      background: #242321;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #e2c49b;
+    }
+
+    @media (max-width: 750px) {
+      .banner { grid-template-columns: 1fr; }
+      .banner-texto { padding: 28px; }
+      .banner h1 { font-size: 34px; }
+      .banner-visual { min-height: 180px; }
+      .categorias { grid-template-columns: repeat(2, 1fr); }
+      .produtos { grid-template-columns: repeat(2, 1fr); }
+      nav { gap: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="aviso">
+    PROTÓTIPO DEMONSTRATIVO — NÃO É A LOJA OFICIAL
+    — SEM PAGAMENTOS OU COLETA DE DADOS
+  </div>
+
+  <header>
+    <div class="logo">MILANO CUCINA</div>
+    <div class="sublogo">DESIGN • CASA • COZINHA</div>
+  </header>
+
+  <nav>
+    <a href="#categorias">Categorias</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#campanha">Novidades</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main class="container">
+    <section class="banner">
+      <div class="banner-texto">
+        <p>DESIGN QUE TRANSFORMA ESPAÇOS</p>
+        <h1>Uma nova experiência para sua cozinha.</h1>
+        <p>
+          Explore ideias e soluções para criar ambientes que unem
+          funcionalidade, tecnologia e estilo.
+        </p>
+        <a class="botao" href="#produtos">EXPLORAR PRODUTOS</a>
+      </div>
+
+      <div class="banner-visual">
+        Inspiração para viver bem
+      </div>
+    </section>
+
+    <div class="aviso-interno">
+      <strong>Área de teste interno:</strong>
+      textos, produtos, preços e ofertas nesta página são exemplos.
+      Utilize este protótipo para discutir melhorias com a equipe.
+      Nenhum dado é transmitido para servidores.
+    </div>
+
+    <section id="categorias">
+      <h2>Explore nossas categorias</h2>
+
+      <div class="categorias">
+        <a class="categoria" href="#produtos">
+          <span>◉</span>Adegas
+        </a>
+        <a class="categoria" href="#produtos">
+          <span>◌</span>Coifas
+        </a>
+        <a class="categoria" href="#produtos">
+          <span>▤</span>Cooktops
+        </a>
+        <a class="categoria" href="#produtos">
+          <span>▣</span>Fornos
+        </a>
+        <a class="categoria" href="#produtos">
+          <span>▥</span>Refrigeradores
+        </a>
+      </div>
+    </section>
+
+    <section id="produtos">
+      <h2>Produtos em destaque</h2>
+
+      <div class="produtos">
+        <article class="produto">
+          <div class="produto-imagem">▥</div>
+          <h3>Adega climatizada — exemplo</h3>
+          <p>Preço ilustrativo: R$ 0.000,00</p>
+          <button type="button" onclick="demo()">
+            Ver produto (demo)
+          </button>
+        </article>
+
+        <article class="produto">
+          <div class="produto-imagem">◉</div>
+          <h3>Cooktop — exemplo</h3>
+          <p>Preço ilustrativo: R$ 0.000,00</p>
+          <button type="button" onclick="demo()">
+            Ver produto (demo)
+          </button>
+        </article>
+
+        <article class="produto">
+          <div class="produto-imagem">◌</div>
+          <h3>Coifa — exemplo</h3>
+          <p>Preço ilustrativo: R$ 0.000,00</p>
+          <button type="button" onclick="demo()">
+            Ver produto (demo)
+          </button>
+        </article>
+
+        <article class="produto">
+          <div class="produto-imagem">▣</div>
+          <h3>Forno de embutir — exemplo</h3>
+          <p>Preço ilustrativo: R$ 0.000,00</p>
+          <button type="button" onclick="demo()">
+            Ver produto (demo)
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <section class="campanha" id="campanha">
+      <h2>Novidades e inspiração</h2>
+      <p>
+        Espaço reservado para campanhas e conteúdos que a equipe
+        queira testar antes de publicar na loja oficial.
+      </p>
+      <a class="botao" href="#categorias">VER CATEGORIAS</a>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <strong>MILANO CUCINA</strong>
+    <p>Protótipo de referência para uso interno.</p>
+    Site oficial:
+    <a href="https://www.milanocucina.com.br/" target="_blank" rel="noopener">
+      www.milanocucina.com.br
+    </a>
+    <p>
+      Esta demonstração não realiza compras, não processa pagamentos
+      e não coleta nem transmite dados.
+    </p>
+  </footer>
+
+  <script>
+    function demo() {
+      alert("Demonstração: nenhum produto ou pedido foi aberto.");
+    }
+  </script>
+</body>
+</html>
